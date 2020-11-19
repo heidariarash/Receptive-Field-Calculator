@@ -1,0 +1,29 @@
+{
+  "name": "receptive-field-calculator",
+  "version": "1.0.0",
+  "description": "Receptive Field Calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heidariarash/Receptive-Field-Calculator.git"
+  },
+  "keywords": [
+    "DeepLearning",
+    "Convolution",
+    "Pooling",
+    "TensorFlow",
+    "PyTorch"
+  ],
+  "author": "Arash Heidari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heidariarash/Receptive-Field-Calculator/issues"
+  },
+  "homepage": "https://github.com/heidariarash/Receptive-Field-Calculator#readme",
+  "dependencies": {
+    "electron": "^11.0.1"
+  }
+}
