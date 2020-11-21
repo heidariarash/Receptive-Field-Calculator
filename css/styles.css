@@ -1,0 +1,376 @@
+/***********************************************
+              Defining New Fonts
+***********************************************/
+@font-face {
+    font-family: bigFunnyFont;
+    src: url("../fonts/SansitaSwashed-Medium.ttf");
+}
+
+@font-face {
+    font-family: bigFunnyFontBold;
+    src: url("../fonts/SansitaSwashed-Bold.ttf");
+}
+
+@font-face {
+    font-family: normalFont;
+    src: url("../fonts/Kalam-Regular.ttf");
+}
+
+/***********************************************
+            Panels Configurations
+***********************************************/
+.main-panel{
+    font: normalFont;
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:35px;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #161a1d;
+}
+
+.middle-panel{
+    overflow: auto;
+    margin-top: 0.5%;
+    height: 95%;
+}
+
+.right-panel {
+    overflow: auto;
+    height: 95%;
+    margin-top: 0.5%;
+}
+
+.left-panel {
+    overflow: auto;
+    margin-top: 0.5%;
+    height: 95%;
+}
+
+.scrollable {
+    overflow: auto;
+    max-height: 230px;
+    margin-bottom: 10px;
+}
+
+.scrollable-small {
+    overflow: auto;
+    max-height: 170px;
+    margin-bottom: 10px;
+}
+
+.no-overflow {
+    overflow: visible;
+    max-height: 170px;
+    margin-bottom: 10px;
+}
+
+.no-overflow #activation-selector{
+    font-size: 18px;
+}
+
+/***********************************************
+              Add New Layer Button
+***********************************************/
+#new-layer-button-parent{
+    margin-top: 50px;
+}
+
+#new-layer-button {
+    border: 1px solid #db3a34;
+    font-family: bigFunnyFont;
+    border-radius: 20px;
+    color: #db3a34;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30;
+    transition: all 0.5s ease-in-out;
+}
+
+#new-layer-button:hover,
+#new-layer-button:focus{
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/***********************************************
+                   Headings
+***********************************************/
+.main-heading-4 {
+    font-family: bigFunnyFont;
+    color: #db3a34;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.main-heading-3 {
+    font-family: bigFunnyFont;
+    color: #eeef20;
+}
+
+.main-heading-2 {
+    font-family: bigFunnyFontBold;
+    font-size: 25px;
+    color: #db3a34;
+}
+
+.main-heading-1 {
+    font-family: bigFunnyFont;
+    font-size: 25px;
+    color: #db3a34;
+}
+
+.heading-1-parent {
+    margin-top: 10%;
+    margin-bottom: 0%;
+}
+
+.heading-2-parent {
+    margin-top: 20%;
+}
+
+.heading-3-parent {
+    margin-top: 3%;
+}
+
+.heading-4-parent {
+    margin-top: 5%;
+}
+
+.attention-note {
+    color: #db3a34;
+    opacity: 0;
+    font-family: normalFont;
+    /* margin-bottom: 0%; */
+}
+
+#layer-attention {
+    margin-top: 5px;
+}
+
+/***********************************************
+                Input Fields
+***********************************************/
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select,
+input {
+    background-color: #ffd000;
+    border-color: black;
+    border-radius: 20px;
+    text-align-last:center;
+    font-family: normalFont;
+    width: 50%;
+}
+
+input:invalid {
+    background-color: #db3a34;
+}
+
+.small-input {
+    width: 30%;
+    font-family: normalFont;
+}
+
+/***********************************************
+                    Title Bar
+***********************************************/
+#title-bar {
+	-webkit-app-region: drag;
+    height: 35px;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+	padding: 0px;
+    margin: 0px;  
+	background-color: #0c0e0f;
+    color: #db3a34;
+    font-family: bigFunnyFontBold;
+}
+
+#title {
+	position: fixed;
+	top: 0px;
+	left: 12px;	
+	line-height: 32px;
+    font-size: 25px;
+}
+
+#title-sm {
+	position: fixed;
+	top: 0px;
+	left: 12px;	
+	line-height: 32px;
+    font-size: 18px;
+}
+
+#title-bar-btns {
+	-webkit-app-region: no-drag;
+	position: fixed;
+	top: 1px;
+	right: 0px;	
+}
+
+#title-bar-btns a {
+	height: 32px;
+    width: 32px;
+    margin-right: 15px;
+	background-color: transparent;
+	border: none;
+    font-size: 25px;
+    color: #db3a34;
+    font-family: normalFont;
+    transition: all 0.3s ease-in-out;
+}
+
+#title-bar-btns a:hover {
+    cursor: pointer;
+    color: #eeef20;
+}
+
+/***********************************************
+          Add, Cog, trash, and notify
+***********************************************/
+.cog-invisible,
+.cog {
+    width: 16px;
+    height: 16px;
+    fill: #db3a34;
+    transition: all 0.3s ease-in-out;
+    margin-right: 15px;
+}
+
+.notify {
+    width: 120px;
+    height: 80px;
+    fill: #eeef20;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.trash:hover,
+.cog:hover {
+    fill: #eeef20;
+    cursor: pointer;
+}
+
+.trash-invisible,
+.trash {
+    width: 16px;
+    height: 16px;
+    fill: #db3a34;
+    transition: all 0.3s ease-in-out;
+    margin-left: 15px;
+}
+
+.add {
+    width: 235px;
+    height: 35px;
+    opacity: 0.25;
+    margin-bottom: 15px;
+    padding: auto 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.add:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/***********************************************
+            Done, Cancel, and OK
+***********************************************/
+#done {
+    margin-right: 10%;
+    color: #db3a34;
+}
+
+#cancle {
+    margin-left: 10%;
+    color: #db3a34;
+}
+
+#add-sth,
+#ok {
+    color: #db3a34;
+}
+
+.small-window-buttons {
+    padding: 4px 20px;
+    border-radius: 15px;
+    font-family: bigFunnyFont;
+    border: 1px solid #db3a34;
+    transition: all 0.3s ease-in-out;
+}
+
+.small-window-buttons:hover {
+    border-color: #eeef20;
+    cursor: pointer;
+}
+
+#add-sth:hover,
+#ok:hover,
+#done:hover,
+#cancle:hover {
+    color: #eeef20;
+}
+
+/***********************************************
+                    Info
+***********************************************/
+.info {
+    color: #eeef20;
+    font-family: normalFont;
+    font-size: 18;
+    line-height: 8pt;
+}
+
+/***********************************************
+                Scrollbars
+***********************************************/
+
+::-webkit-scrollbar {
+    width: 5px;
+    background: #161a1d;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #db3a34;
+}
+
+/***********************************************
+                File Name Input
+***********************************************/
+#file-name-input {
+    width: 80%;
+    text-align: center;
+    font-family: normalFont;
+    font-size: 20;
+}
+
+/***********************************************
+                Input Shape Config
+***********************************************/
+.dimension {
+    font-family: normalFont;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 20;
+    width: 50%;
+    margin-bottom: 15px;
+}
