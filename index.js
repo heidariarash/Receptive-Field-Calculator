@@ -18,7 +18,7 @@ app.on('ready', ()=> {
     });
 
     //Loading the corresponding HTML File
-    mainWindow.loadURL(`file://${__dirname}/html/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/html/main.html`);
     mainWindow.maximize();
 });
 
