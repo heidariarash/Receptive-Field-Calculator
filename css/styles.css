@@ -31,12 +31,6 @@
     background-color: #161a1d;
 }
 
-.middle-panel{
-    overflow: auto;
-    margin-top: 0.5%;
-    height: 95%;
-}
-
 .right-panel {
     overflow: auto;
     height: 95%;
