@@ -12,14 +12,13 @@ app.on('ready', ()=> {
         frame: false,
         webPreferences: {
             nodeIntegration: true,
-            devTools: false
+            // devTools: false
         },
         // icon: __dirname + '/gallery/icon.png'
     });
 
     //Loading the corresponding HTML File
     mainWindow.loadURL(`file://${__dirname}/html/main.html`);
-    mainWindow.maximize();
 });
 
 //exiting app on close app button
