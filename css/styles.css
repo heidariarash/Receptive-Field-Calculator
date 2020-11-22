@@ -143,49 +143,6 @@
     margin-top: 5%;
 }
 
-.attention-note {
-    color: #db3a34;
-    opacity: 0;
-    font-family: normalFont;
-    /* margin-bottom: 0%; */
-}
-
-#layer-attention {
-    margin-top: 5px;
-}
-
-/***********************************************
-                Input Fields
-***********************************************/
-input::-webkit-calendar-picker-indicator {
-    display: none;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-select,
-input {
-    background-color: #ffd000;
-    border-color: black;
-    border-radius: 20px;
-    text-align-last:center;
-    font-family: normalFont;
-    width: 50%;
-}
-
-input:invalid {
-    background-color: #db3a34;
-}
-
-.small-input {
-    width: 30%;
-    font-family: normalFont;
-}
-
 /***********************************************
                     Title Bar
 ***********************************************/
@@ -351,26 +308,4 @@ input:invalid {
 
 ::-webkit-scrollbar-thumb {
     background-color: #db3a34;
-}
-
-/***********************************************
-                File Name Input
-***********************************************/
-#file-name-input {
-    width: 80%;
-    text-align: center;
-    font-family: normalFont;
-    font-size: 20;
-}
-
-/***********************************************
-                Input Shape Config
-***********************************************/
-.dimension {
-    font-family: normalFont;
-    text-align: center;
-    border-radius: 15px;
-    font-size: 20;
-    width: 50%;
-    margin-bottom: 15px;
 }
