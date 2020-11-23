@@ -3,6 +3,7 @@ const electron = require('electron');
 const { app, BrowserWindow, ipcMain, dialog } = electron;
 
 let mainWindow;
+let configureWindow;
 
 app.on('ready', ()=> {
     // Customizing Main Window
@@ -39,4 +40,23 @@ ipcMain.on('max-app', () => {
 //minimizing app on max app button
 ipcMain.on('min-app', () => {
     mainWindow.minimize();
+});
+
+//New Layer Request
+ipcMain.on('new-layer-request', (event, args) => {
+    configureWindow = new BrowserWindow({
+        frame: false,
+        webPreferences: {
+            nodeIntegration: true,
+            devTools: false
+        },
+        width: 400,
+        height: 300,
+        resizable: false,
+        maximizable: false,
+        parent: mainWindow,
+        modal: true
+    });
+    requested_add_button = args;
+    configureWindow.loadURL(`file://${__dirname}/html/new-layer.html`);
 });
