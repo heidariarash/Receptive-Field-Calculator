@@ -4,6 +4,7 @@ const { app, BrowserWindow, ipcMain, dialog } = electron;
 
 let mainWindow;
 let configureWindow;
+let threeD = false;
 
 app.on('ready', ()=> {
     // Customizing Main Window
@@ -65,3 +66,8 @@ ipcMain.on('new-layer-request', (event, args) => {
 ipcMain.on('close-small', () => {
     configureWindow.close();
 })
+
+ipcMain.on('add-new-layer', (evt, args) => {
+    mainWindow.webContents.send('add-new-layer', {name: args, button: requested_add_button});
+    configureWindow.close();
+});
