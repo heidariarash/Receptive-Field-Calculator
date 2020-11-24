@@ -370,3 +370,32 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select,
+input {
+    background-color: #ffd000;
+    border-color: black;
+    border-radius: 20px;
+    text-align-last:center;
+    font-family: normalFont;
+    width: 50%;
+}
+
+input:invalid {
+    background-color: #db3a34;
+}
+
+.small-input {
+    width: 30%;
+    font-family: normalFont;
+}
