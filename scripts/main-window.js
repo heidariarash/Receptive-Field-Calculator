@@ -1,9 +1,29 @@
+//imports
 const add_layer_to_window = require("../scripts/utils/new-layer.js");
 const electron = require('electron');
 const {ipcRenderer} = electron;
 
+//variables
 let layers_count = 0;
+let layers = [];
 
+//functions
+const add_new_layer_buttons = element => {
+    ipcRenderer.send('new-layer-request', element.id.slice(0,-4));
+}
+
+const delete_layer = (element) => {
+    for (let i=0; i < layers.length; i++) {
+        if (layers[i].id === element.id.slice(0,-6)) {
+            layers.splice(i, 1);
+            layer_to_remove = document.getElementById(element.id.slice(0,-6));
+            layer_to_remove.parentNode.removeChild(layer_to_remove);
+            break;
+        }
+    }
+}
+
+//get element by id listeners
 document.getElementById('close-btn').addEventListener('click', () => {
     ipcRenderer.send('exit-app');
 });
@@ -20,12 +40,8 @@ document.getElementById('new-layer-button').addEventListener('click', () => {
     add_new_layer_buttons({id: 'new-layer-button-parent-add'})
 });
 
-const add_new_layer_buttons = element => {
-    ipcRenderer.send('new-layer-request', element.id.slice(0,-4));
-}
-
+//ipcs renderers
 ipcRenderer.on('add-new-layer', (event, args) => {
     add_layer_to_window(args, layers_count);
     layers_count += 1;
-    document.getElementById('layer-attention').setAttribute('style','opacity: 0');
 });
