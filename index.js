@@ -60,3 +60,8 @@ ipcMain.on('new-layer-request', (event, args) => {
     requested_add_button = args;
     configureWindow.loadURL(`file://${__dirname}/html/new-layer.html`);
 });
+
+//cancle in Add New Layer Window
+ipcMain.on('close-small', () => {
+    configureWindow.close();
+})
