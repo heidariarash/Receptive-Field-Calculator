@@ -40,23 +40,50 @@ add_new_layer = (args, layers_count) => {
                         <p class="info">Padding: 0,0</p>
                         <p class="info">Dilation Rate: 1,1</p>
                         `
-   
-    new_layer = {
-        id: `layer-${layers_count}`,
-        name: args.name,
-        filter_size: [3,3,3],
-        stride: [1,1,1],
-        padding: [0,0,0],
-        dilation: [1,1,1]
-    };
+    
+    infos = layer.getElementsByClassName('info');
+    switch (args.name) {
+        case "Convolution":
+            new_layer = {
+                id: `layer-${layers_count}`,
+                name: args.name,
+                filter_size: [3,3,3],
+                stride: [1,1,1],
+                padding: [0,0,0],
+                dilation: [1,1,1]
+            };
+        
+            if(args.button === "new-layer-button-parent"){
+                layers.push(new_layer);
+            }
+            else{
+                let item_index = layers.findIndex(x => x.id == args.button);
+                layers.splice(item_index, 0, new_layer);
+            }
+            break;
 
-    if(args.button === "new-layer-button-parent"){
-        layers.push(new_layer);
+        case "Avg Pool":
+        case "Max Pool":
+            infos[3].parentNode.removeChild(infos[3]);
+            new_layer = {
+                id: `layer-${layers_count}`,
+                name: args.name,
+                filter_size: [3,3,3],
+                stride: [1,1,1],
+                padding: [0,0,0]
+            };
+        
+            if(args.button === "new-layer-button-parent"){
+                layers.push(new_layer);
+            }
+            else{
+                let item_index = layers.findIndex(x => x.id == args.button);
+                layers.splice(item_index, 0, new_layer);
+            }
+            break;
     }
-    else{
-        let item_index = layers.findIndex(x => x.id == args.button);
-        layers.splice(item_index, 0, new_layer);
-    }
+
+    
 
     document.getElementById('layers-panel').insertBefore(layer, document.getElementById(args.button));
 }
