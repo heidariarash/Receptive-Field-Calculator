@@ -1,5 +1,6 @@
 //imports
 const add_layer_to_window = require("../scripts/utils/new-layer.js");
+const change_3D = require("../scripts/utils/change_3d.js")
 const electron = require('electron');
 const {ipcRenderer} = electron;
 
@@ -51,8 +52,11 @@ document.getElementById('new-layer-button').addEventListener('click', () => {
 
 document.getElementById('threeD').addEventListener('change', () => {
     threeD = document.getElementById('threeD').checked;
-    ipcRenderer.send('change_3d', document.getElementById('threeD').checked)
-})
+    ipcRenderer.send('change_3d', document.getElementById('threeD').checked);
+    change_3D(layers);
+});
+
+
 
 
 
