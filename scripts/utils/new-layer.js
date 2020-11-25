@@ -1,4 +1,4 @@
-add_new_layer = (args, layers_count) => {
+add_new_layer = (args, layers_count, threeD) => {
     //constructing layer
     const layer = document.createElement('div');
     let attr;
@@ -42,6 +42,14 @@ add_new_layer = (args, layers_count) => {
                         `
     
     infos = layer.getElementsByClassName('info');
+    
+    if (threeD){
+        infos[0].innerHTML = "Filter Size: 3,3,3"
+        infos[1].innerHTML = "Stride: 1,1,1"
+        infos[2].innerHTML = "Padding: 0,0,0"
+        infos[3].innerHTML = "Dilation Rate: 1,1,1"
+    }
+
     switch (args.name) {
         case "Convolution":
             new_layer = {

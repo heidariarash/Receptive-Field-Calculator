@@ -58,6 +58,6 @@ document.getElementById('threeD').addEventListener('change', () => {
 
 //ipcs renderers
 ipcRenderer.on('add-new-layer', (event, args) => {
-    add_layer_to_window(args, layers_count);
+    add_layer_to_window(args, layers_count, threeD);
     layers_count += 1;
 });
