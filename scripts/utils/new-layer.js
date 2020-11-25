@@ -37,14 +37,17 @@ add_new_layer = (args, layers_count) => {
                         <br>
                         <p class="info">Filter Size: 3,3</p>
                         <p class="info">Stride: 1,1</p>
-                        <p class="info">Padding: 0,0</p>`
+                        <p class="info">Padding: 0,0</p>
+                        <p class="info">Dilation Rate: 1,1</p>
+                        `
    
     new_layer = {
         id: `layer-${layers_count}`,
         name: args.name,
-        filter_size: [3,3],
-        stride: [1,1],
-        padding: [0,0]
+        filter_size: [3,3,3],
+        stride: [1,1,1],
+        padding: [0,0,0],
+        dilation: [1,1,1]
     };
 
     if(args.button === "new-layer-button-parent"){
