@@ -1,11 +1,19 @@
+//imports
 const electron = require('electron');
-
 const { app, BrowserWindow, ipcMain, dialog } = electron;
 
+
+
+
+//variables
 let mainWindow;
 let configureWindow;
 let threeD = false;
 
+
+
+
+//start app
 app.on('ready', ()=> {
     // Customizing Main Window
     mainWindow = new BrowserWindow({
@@ -23,6 +31,10 @@ app.on('ready', ()=> {
     mainWindow.loadURL(`file://${__dirname}/html/main.html`);
 });
 
+
+
+
+//ipcRenderer
 //exiting app on close app button
 ipcMain.on('exit-app', () => {
     app.quit();
@@ -70,4 +82,8 @@ ipcMain.on('close-small', () => {
 ipcMain.on('add-new-layer', (evt, args) => {
     mainWindow.webContents.send('add-new-layer', {name: args, button: requested_add_button});
     configureWindow.close();
+});
+
+ipcMain.on('change_3d', (evt, args) => {
+    threeD = args;
 });

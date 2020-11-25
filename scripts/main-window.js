@@ -3,9 +3,14 @@ const add_layer_to_window = require("../scripts/utils/new-layer.js");
 const electron = require('electron');
 const {ipcRenderer} = electron;
 
+
+
 //variables
 let layers_count = 0;
 let layers = [];
+let threeD = false;
+
+
 
 //functions
 const add_new_layer_buttons = element => {
@@ -23,6 +28,10 @@ const delete_layer = (element) => {
     }
 }
 
+
+
+
+
 //get element by id listeners
 document.getElementById('close-btn').addEventListener('click', () => {
     ipcRenderer.send('exit-app');
@@ -39,6 +48,13 @@ document.getElementById('max-btn').addEventListener('click', () => {
 document.getElementById('new-layer-button').addEventListener('click', () => {
     add_new_layer_buttons({id: 'new-layer-button-parent-add'})
 });
+
+document.getElementById('threeD').addEventListener('change', () => {
+    threeD = document.getElementById('threeD').checked;
+    ipcRenderer.send('change_3d', document.getElementById('threeD').checked)
+})
+
+
 
 //ipcs renderers
 ipcRenderer.on('add-new-layer', (event, args) => {
