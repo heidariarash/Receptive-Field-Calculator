@@ -108,3 +108,8 @@ ipcMain.on("config-layer", (event, arg) => {
     layer_under_config = arg;
     configureWindow.loadURL(`file://${__dirname}/html/configure-window.html`);
 });
+
+//sending initialization parameters to layer config window
+ipcMain.on("ready-layer-config", () => {
+    configureWindow.webContents.send("layer-config", {layer:layer_under_config, threeD:threeD});
+});
