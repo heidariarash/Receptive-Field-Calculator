@@ -53,7 +53,7 @@ document.getElementById('new-layer-button').addEventListener('click', () => {
 document.getElementById('threeD').addEventListener('change', () => {
     threeD = document.getElementById('threeD').checked;
     ipcRenderer.send('change_3d', document.getElementById('threeD').checked);
-    change_3D(layers);
+    change_3D(layers, document.getElementById('threeD').checked);
 });
 
 
