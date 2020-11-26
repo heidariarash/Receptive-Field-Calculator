@@ -21,32 +21,25 @@
                     <input class = "small-input" type="number" min="1" step="1" required>
                     <br>
                     <br>
-                    <label class="info">Number of Filters: </label>
-                    <br>
-                    <input id="number-of-filters" type="number" min="1" step="1" required>
-                    <br>
-                    <br>
                     <label class="info">Stride: </label>
                     <br>
-                    <input id="stride" type="number" min="1" step="1" required>
-                    <br>
-                    <br>
-                    <label class="info">Activation: </label>
-                    <br>
-                    <select id="activation-selector" onmousedown="this.size=3;"  onchange='this.size=0;' onblur="this.size=0;">
-                        <option value="relu">ReLu</option>
-                        <option value="tanh">Tanh</option>
-                        <option value="sigmoid">Sigmoid</option>
-                        <option value="linear">Linear</option>
-                    </select>
+                    <input class = "small-input" type="number" min="1" step="1" required>
+                    <input class = "small-input" type="number" min="1" step="1" required>
+                    <input class = "small-input" type="number" min="1" step="1" required>
                     <br>
                     <br>
                     <label class="info">Padding: </label>
                     <br>
-                    <select id="padding-selector" onmousedown="this.size=2;"  onchange='this.size=0;' onblur="this.size=0;">
-                        <option value="valid">Valid</option>
-                        <option value="same">Same</option>
-                    </select>
+                    <input class = "small-input" type="number" min="0" step="1" required>
+                    <input class = "small-input" type="number" min="0" step="1" required>
+                    <input class = "small-input" type="number" min="0" step="1" required>
+                    <br>
+                    <br>
+                    <label class="info">Dilation Rate: </label>
+                    <br>
+                    <input class = "small-input" type="number" min="1" step="1" required>
+                    <input class = "small-input" type="number" min="1" step="1" required>
+                    <input class = "small-input" type="number" min="1" step="1" required>
                 </div>
                 <br>
                 <a class="small-window-buttons" id="done">Done</a>

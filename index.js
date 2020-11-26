@@ -106,5 +106,5 @@ ipcMain.on("config-layer", (event, arg) => {
     });
 
     layer_under_config = arg;
-    configureWindow.loadURL(`file://${__dirname}/html/configure_window.html`);
+    configureWindow.loadURL(`file://${__dirname}/html/configure-window.html`);
 });
