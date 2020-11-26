@@ -1,6 +1,7 @@
 //imports
 const add_layer_to_window = require("../scripts/utils/new-layer.js");
-const change_3D = require("../scripts/utils/change_3d.js")
+const change_3D = require("../scripts/utils/change_3d.js");
+const change_desc = require("../scripts/utils/change_desc.js");
 const electron = require('electron');
 const {ipcRenderer} = electron;
 
@@ -73,4 +74,14 @@ document.getElementById('threeD').addEventListener('change', () => {
 ipcRenderer.on('add-new-layer', (event, args) => {
     add_layer_to_window(args, layers_count, threeD);
     layers_count += 1;
+});
+
+ipcRenderer.on('set-config', (event, layer) => {
+    for (let i=0; i < layers.length; i++) {
+        if (layers[i].id === layer.id) {
+            layers[i] = layer;
+            change_desc(layer, threeD);
+            break;
+        }
+    }
 });

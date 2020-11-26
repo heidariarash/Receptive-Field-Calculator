@@ -95,7 +95,7 @@ ipcMain.on("config-layer", (event, arg) => {
         frame: false,
         webPreferences: {
             nodeIntegration: true,
-            devTools: false
+            // devTools: false
         },
         width: 400,
         height: 370,
@@ -112,4 +112,9 @@ ipcMain.on("config-layer", (event, arg) => {
 //sending initialization parameters to layer config window
 ipcMain.on("ready-layer-config", () => {
     configureWindow.webContents.send("layer-config", {layer:layer_under_config, threeD:threeD});
+});
+
+ipcMain.on("layer-config-finish", (event, arg) => {
+    configureWindow.close();
+    mainWindow.webContents.send("set-config", arg);
 });
