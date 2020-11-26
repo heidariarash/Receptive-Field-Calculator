@@ -9,6 +9,7 @@ const { app, BrowserWindow, ipcMain, dialog } = electron;
 let mainWindow;
 let configureWindow;
 let threeD = false;
+let layer_under_config;
 
 
 
@@ -86,4 +87,24 @@ ipcMain.on('add-new-layer', (evt, args) => {
 
 ipcMain.on('change_3d', (evt, args) => {
     threeD = args;
+});
+
+//configuring a layer
+ipcMain.on("config-layer", (event, arg) => {
+    configureWindow = new BrowserWindow({
+        frame: false,
+        webPreferences: {
+            nodeIntegration: true,
+            devTools: false
+        },
+        width: 400,
+        height: 370,
+        resizable: false,
+        maximizable: false,
+        parent: mainWindow,
+        modal: true
+    });
+
+    layer_under_config = arg;
+    configureWindow.loadURL(`file://${__dirname}/html/configure_window.html`);
 });

@@ -29,6 +29,15 @@ const delete_layer = (element) => {
     }
 }
 
+const layer_config = element => {
+    for (let i=0; i < layers.length; i++) {
+        if (layers[i].id === element.id.slice(0,-4)) {
+            ipcRenderer.send("config-layer", layers[i])
+            break;
+        }
+    }
+}
+
 
 
 
