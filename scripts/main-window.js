@@ -12,7 +12,6 @@ const {ipcRenderer} = electron;
 let layers_count = 0;
 let layers = [];
 let threeD = false;
-let receptive_field = [0,0,0];
 
 
 
@@ -76,7 +75,7 @@ document.getElementById('threeD').addEventListener('change', () => {
 ipcRenderer.on('add-new-layer', (event, args) => {
     add_layer_to_window(args, layers_count, threeD);
     layers_count += 1;
-    receptive_field = calculate_receptive_field(layers);
+    calculate_receptive_field(layers);
 });
 
 ipcRenderer.on('set-config', (event, layer) => {
@@ -84,6 +83,7 @@ ipcRenderer.on('set-config', (event, layer) => {
         if (layers[i].id === layer.id) {
             layers[i] = layer;
             change_desc(layer, threeD);
+            calculate_receptive_field(layers);
             break;
         }
     }
