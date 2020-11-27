@@ -2,6 +2,7 @@
 const add_layer_to_window = require("../scripts/utils/new-layer.js");
 const change_3D = require("../scripts/utils/change_3d.js");
 const change_desc = require("../scripts/utils/change_desc.js");
+const calculate_receptive_field = require("../scripts/utils/calc_receptive.js")
 const electron = require('electron');
 const {ipcRenderer} = electron;
 
@@ -11,6 +12,7 @@ const {ipcRenderer} = electron;
 let layers_count = 0;
 let layers = [];
 let threeD = false;
+let receptive_field = [0,0,0];
 
 
 
@@ -74,6 +76,7 @@ document.getElementById('threeD').addEventListener('change', () => {
 ipcRenderer.on('add-new-layer', (event, args) => {
     add_layer_to_window(args, layers_count, threeD);
     layers_count += 1;
+    receptive_field = calculate_receptive_field(layers);
 });
 
 ipcRenderer.on('set-config', (event, layer) => {
