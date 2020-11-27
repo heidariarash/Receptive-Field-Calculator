@@ -24,7 +24,7 @@ const change_desc = (layer, threeD) => {
             size_calc += `${size},`;
         }
         size_calc = size_calc.slice(0,-1);
-        configed_layer.getElementsByTagName("p")[3].innerHTML = `Activation: ${size_calc}`;
+        configed_layer.getElementsByTagName("p")[3].innerHTML = `Dilation Rate: ${size_calc}`;
     }
 }
 

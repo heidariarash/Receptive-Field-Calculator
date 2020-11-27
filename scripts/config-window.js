@@ -17,14 +17,14 @@ document.getElementById('done').addEventListener('click', ()=> {
             layer.filter_size[i] = document.getElementsByClassName("small-input")[i].value;
         }
         for(let i = 3; i < 6; i++){
-            layer.stride[i] = document.getElementsByClassName("small-input")[i].value;
+            layer.stride[i-3] = document.getElementsByClassName("small-input")[i].value;
         }
         for(let i = 6; i < 9; i++){
-            layer.padding[i] = document.getElementsByClassName("small-input")[i].value;
+            layer.padding[i-6] = document.getElementsByClassName("small-input")[i].value;
         }
         if(document.getElementsByClassName("small-input").length > 9){
             for(let i = 9; i < 12; i++){
-                layer.dilation[i] = document.getElementsByClassName("small-input")[i].value;
+                layer.dilation[i-9] = document.getElementsByClassName("small-input")[i].value;
             }
         }
     }
@@ -33,14 +33,14 @@ document.getElementById('done').addEventListener('click', ()=> {
             layer.filter_size[i] = document.getElementsByClassName("small-input")[i].value;
         }
         for(let i = 2; i < 4; i++){
-            layer.stride[i] = document.getElementsByClassName("small-input")[i].value;
+            layer.stride[i-2] = document.getElementsByClassName("small-input")[i].value;
         }
         for(let i = 4; i < 6; i++){
-            layer.padding[i] = document.getElementsByClassName("small-input")[i].value;
+            layer.padding[i-4] = document.getElementsByClassName("small-input")[i].value;
         }
         if(document.getElementsByClassName("small-input").length > 6){
             for(let i = 6; i < 8; i++){
-                layer.dilation[i] = document.getElementsByClassName("small-input")[i].value;
+                layer.dilation[i-6] = document.getElementsByClassName("small-input")[i].value;
             }
         }
     }
