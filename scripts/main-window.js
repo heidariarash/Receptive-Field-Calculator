@@ -30,6 +30,7 @@ const delete_layer = (element) => {
             break;
         }
     }
+    calculate_receptive_field(layers, threeD);
     calculate_minimum_size(layers, threeD);
 }
 
@@ -67,6 +68,7 @@ document.getElementById('threeD').addEventListener('change', () => {
     threeD = document.getElementById('threeD').checked;
     ipcRenderer.send('change_3d', document.getElementById('threeD').checked);
     change_3D(layers, document.getElementById('threeD').checked);
+    calculate_receptive_field(layers, threeD);
     calculate_minimum_size(layers, threeD);
 });
 
@@ -78,7 +80,7 @@ document.getElementById('threeD').addEventListener('change', () => {
 ipcRenderer.on('add-new-layer', (event, args) => {
     add_layer_to_window(args, layers_count, threeD);
     layers_count += 1;
-    calculate_receptive_field(layers);
+    calculate_receptive_field(layers, threeD);
     calculate_minimum_size(layers, threeD);
 });
 
@@ -87,7 +89,7 @@ ipcRenderer.on('set-config', (event, layer) => {
         if (layers[i].id === layer.id) {
             layers[i] = layer;
             change_desc(layer, threeD);
-            calculate_receptive_field(layers);
+            calculate_receptive_field(layers, threeD);
             calculate_minimum_size(layers, threeD);
             break;
         }
