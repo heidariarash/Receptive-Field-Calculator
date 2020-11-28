@@ -1,8 +1,10 @@
-const calculate_minimum_size = (layers) => {
+const calculate_minimum_size = (layers, threeD) => {
     let size = [1,1,1];
     let temp;
+    const size_label = document.getElementById('min-shape');
 
     if (layers.length === 0){
+        size_label.innerHTML = "Please add at least a layer";
         return;
     }
 
@@ -36,7 +38,13 @@ const calculate_minimum_size = (layers) => {
         }
 
     }
-    console.log(size)
+
+    if (threeD){
+        size_label.innerHTML = `${size[0]} x ${size[1]} x ${size[2]}`;
+    }
+    else {
+        size_label.innerHTML = `${size[0]} x ${size[1]}`;
+    }
 }
 
 module.exports = calculate_minimum_size;
