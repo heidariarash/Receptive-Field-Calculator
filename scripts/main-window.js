@@ -2,7 +2,8 @@
 const add_layer_to_window = require("../scripts/utils/new-layer.js");
 const change_3D = require("../scripts/utils/change_3d.js");
 const change_desc = require("../scripts/utils/change_desc.js");
-const calculate_receptive_field = require("../scripts/utils/calc_receptive.js")
+const calculate_receptive_field = require("../scripts/utils/calc_receptive.js");
+const calculate_minimum_size = require("../scripts/utils/calc_size.js");
 const electron = require('electron');
 const {ipcRenderer} = electron;
 
@@ -76,6 +77,7 @@ ipcRenderer.on('add-new-layer', (event, args) => {
     add_layer_to_window(args, layers_count, threeD);
     layers_count += 1;
     calculate_receptive_field(layers);
+    calculate_minimum_size(layers);
 });
 
 ipcRenderer.on('set-config', (event, layer) => {
@@ -84,6 +86,7 @@ ipcRenderer.on('set-config', (event, layer) => {
             layers[i] = layer;
             change_desc(layer, threeD);
             calculate_receptive_field(layers);
+            calculate_minimum_size(layers);
             break;
         }
     }
