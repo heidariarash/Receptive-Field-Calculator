@@ -23,7 +23,7 @@ app.on('ready', ()=> {
         frame: false,
         webPreferences: {
             nodeIntegration: true,
-            // devTools: false
+            devTools: false
         },
         // icon: __dirname + '/gallery/icon.png'
     });
@@ -95,7 +95,7 @@ ipcMain.on("config-layer", (event, arg) => {
         frame: false,
         webPreferences: {
             nodeIntegration: true,
-            // devTools: false
+            devTools: false
         },
         width: 400,
         height: 370,
