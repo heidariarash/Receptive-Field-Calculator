@@ -25,7 +25,7 @@ app.on('ready', ()=> {
             nodeIntegration: true,
             devTools: false
         },
-        // icon: __dirname + '/gallery/icon.png'
+        icon: __dirname + '/gallery/logo.png'
     });
 
     //Loading the corresponding HTML File
